@@ -1,0 +1,333 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ----------------------------------------
+   CONTAINER PRINCIPAL (LAYOUT)
+   ---------------------------------------- */
+.container-principal {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ----------------------------------------
+   MENU LATERAL (ASIDE)
+   ---------------------------------------- */
+.menu-lateral {
+    width: 220px;
+    background-color: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    padding: 20px 0;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* Logo do sistema */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 20px 20px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.logo .icone-logo {
+    font-size: 24px;
+}
+
+/* Seções do menu */
+.secao-menu {
+    margin-bottom: 10px;
+}
+
+.titulo-secao {
+    font-size: 11px;
+    font-weight: bold;
+    color: #888;
+    text-transform: uppercase;
+    padding: 15px 20px 8px 20px;
+    letter-spacing: 0.5px;
+}
+
+/* Links do menu */
+.item-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    color: #555;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.item-menu:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Item do menu ativo/selecionado */
+.item-menu.ativo {
+    background-color: #7c3aed;
+    color: #ffffff;
+    border-radius: 8px;
+    margin: 0 10px;
+    padding: 10px;
+}
+
+.item-menu .icone {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+/* ----------------------------------------
+   CONTEÚDO PRINCIPAL
+   ---------------------------------------- */
+.conteudo-principal {
+    flex: 1;
+    margin-left: 220px;
+    padding: 30px 40px;
+    background-color: #f8f8f8;
+}
+
+/* ----------------------------------------
+   CABEÇALHO DA PÁGINA
+   ---------------------------------------- */
+.cabecalho-pagina {
+    margin-bottom: 30px;
+}
+
+.titulo-pagina {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+}
+
+.descricao-pagina {
+    font-size: 14px;
+    color: #666;
+}
+
+/* ----------------------------------------
+   CARDS DE FUNCIONALIDADES
+   ---------------------------------------- */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eee;
+}
+
+.card-cabecalho {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.card-icone {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+/* Cores dos ícones dos cards */
+.card-icone.roxo {
+    background-color: #f3e8ff;
+    color: #7c3aed;
+}
+
+.card-icone.rosa {
+    background-color: #fce7f3;
+    color: #ec4899;
+}
+
+.card-icone.verde {
+    background-color: #dcfce7;
+    color: #22c55e;
+}
+
+.card-icone.azul {
+    background-color: #dbeafe;
+    color: #3b82f6;
+}
+
+.card-info h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1a1a2e;
+    margin-bottom: 4px;
+}
+
+.card-info p {
+    font-size: 13px;
+    color: #666;
+}
+
+/* Botão do card */
+.botao-card {
+    width: 100%;
+    padding: 12px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.botao-card:hover {
+    background-color: #f5f5f5;
+    border-color: #ccc;
+}
+
+/* ----------------------------------------
+   SEÇÃO DE AÇÕES RÁPIDAS
+   ---------------------------------------- */
+.secao-acoes-rapidas {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eee;
+}
+
+.titulo-acoes {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1a1a2e;
+    margin-bottom: 6px;
+}
+
+.descricao-acoes {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.botoes-acoes {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Botão de ação rápida */
+.botao-acao {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    border: 1px solid #e0e0e0;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.botao-acao:hover {
+    background-color: #f0f0f0;
+}
+
+/* Botão de ação destacado (primário) */
+.botao-acao.primario {
+    background-color: #7c3aed;
+    color: #ffffff;
+    border-color: #7c3aed;
+}
+
+.botao-acao.primario:hover {
+    background-color: #6d28d9;
+}
+
+/* Botão de ação ativo/selecionado */
+.botao-acao.ativo {
+    background-color: #7c3aed;
+    color: #ffffff;
+    border-color: #7c3aed;
+}
+
+/* ----------------------------------------
+   ESTILOS PARA PÁGINAS INTERNAS
+   ---------------------------------------- */
+.conteudo-pagina-interna {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eee;
+    min-height: 400px;
+}
+
+.conteudo-pagina-interna h1 {
+    font-size: 24px;
+    color: #1a1a2e;
+    margin-bottom: 10px;
+}
+
+.conteudo-pagina-interna p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* ----------------------------------------
+   RESPONSIVIDADE BÁSICA
+   ---------------------------------------- */
+@media (max-width: 900px) {
+    .grid-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-lateral {
+        width: 60px;
+        padding: 10px 0;
+    }
+
+    .menu-lateral .logo span,
+    .menu-lateral .titulo-secao,
+    .menu-lateral .item-menu span:not(.icone) {
+        display: none;
+    }
+
+    .conteudo-principal {
+        margin-left: 60px;
+        padding: 20px;
+    }
+
+    .item-menu {
+        justify-content: center;
+        padding: 15px;
+    }
+}
