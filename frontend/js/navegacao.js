@@ -10,6 +10,7 @@ function marcarItemMenuAtivo() {
         item.classList.remove('ativo');
     });
     
+    
     // Agora percorre para marcar apenas o item correto
     itensMenu.forEach(function(item) {
         // Pega o link do item (atributo href)
