@@ -3,103 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Serviço - Salão</title>
+    <title>Cadastrar Serviço - Salão Beauty</title>
     <!-- Link para o arquivo de estilos CSS -->
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
-    <!-- Container Principal -->
-    <div class="container-principal">
+    <!-- ========================================
+         PÁGINA DE CADASTRO DE SERVIÇO
+         Layout sem menu lateral conforme imagem
+         ======================================== -->
+    
+    <div class="pagina-cadastro">
         
-        <!-- ----------------------------------------
-             MENU LATERAL (ASIDE)
-             ---------------------------------------- -->
-        <aside class="menu-lateral">
-            
-            <!-- Logo do Sistema -->
-            <div class="logo">
-                <span class="icone-logo">✨</span>
-                <span>Salão</span>
+        <!-- Cabeçalho da página com botão voltar -->
+        <header class="cabecalho-cadastro">
+            <a href="lista-servicos.html" class="botao-voltar" title="Voltar">←</a>
+            <div class="info-cadastro">
+                <h1>Cadastrar Serviço</h1>
+                <p>Adicione um novo serviço ao catálogo</p>
             </div>
-            
-            <!-- Seção: Home -->
-            <nav class="secao-menu">
-                <a href="../index.html" class="item-menu">
-                    <span class="icone">🏠</span>
-                    <span>Home</span>
-                </a>
-            </nav>
-            
-            <!-- Seção: Clientes -->
-            <div class="secao-menu">
-                <div class="titulo-secao">Clientes</div>
-                <a href="lista-clientes.html" class="item-menu">
-                    <span class="icone">👥</span>
-                    <span>Lista de Clientes</span>
-                </a>
-                <a href="cadastrar-cliente.html" class="item-menu">
-                    <span class="icone">➕</span>
-                    <span>Cadastrar Cliente</span>
-                </a>
-            </div>
-            
-            <!-- Seção: Cabeleireiros -->
-            <div class="secao-menu">
-                <div class="titulo-secao">Cabeleireiros</div>
-                <a href="lista-cabeleireiros.html" class="item-menu">
-                    <span class="icone">✂️</span>
-                    <span>Lista de Cabeleireiros</span>
-                </a>
-                <a href="cadastrar-cabeleireiro.html" class="item-menu">
-                    <span class="icone">➕</span>
-                    <span>Cadastrar Cabeleireiro</span>
-                </a>
-            </div>
-            
-            <!-- Seção: Serviços -->
-            <div class="secao-menu">
-                <div class="titulo-secao">Serviços</div>
-                <a href="lista-servicos.html" class="item-menu">
-                    <span class="icone">📋</span>
-                    <span>Lista de Serviços</span>
-                </a>
-                <a href="cadastrar-servico.html" class="item-menu ativo">
-                    <span class="icone">➕</span>
-                    <span>Cadastrar Serviço</span>
-                </a>
-            </div>
-            
-            <!-- Seção: Agendamentos -->
-            <div class="secao-menu">
-                <div class="titulo-secao">Agendamentos</div>
-                <a href="lista-agendamentos.html" class="item-menu">
-                    <span class="icone">📅</span>
-                    <span>Lista de Agendamentos</span>
-                </a>
-                <a href="novo-agendamento.html" class="item-menu">
-                    <span class="icone">📝</span>
-                    <span>Novo Agendamento</span>
-                </a>
-            </div>
-            
-        </aside>
+        </header>
         
-        <!-- Conteúdo Principal -->
-        <main class="conteudo-principal">
+        <!-- Card com o formulário -->
+        <section class="card-formulario">
             
-            <!-- Cabeçalho da página -->
-            <header class="cabecalho-pagina">
-                <h1 class="titulo-pagina">➕ Cadastrar Serviço</h1>
-                <p class="descricao-pagina">Adicione um novo serviço ao catálogo do salão.</p>
-            </header>
+            <!-- Título do formulário -->
+            <div class="titulo-formulario">
+                <span class="icone-titulo">➕</span>
+                <h2>Novo Serviço</h2>
+            </div>
+            <p class="subtitulo-formulario">Preencha os dados do serviço abaixo</p>
             
-            <!-- Conteúdo da página -->
-            <section class="conteudo-pagina-interna">
-                <h1>Página Cadastrar Serviço</h1>
-                <p>Formulário de cadastro será implementado aqui.</p>
-            </section>
+            <!-- Formulário de cadastro -->
+            <form id="formulario-servico">
+                
+                <!-- Campo: Nome do Serviço -->
+                <div class="grupo-campo">
+                    <label for="nome-servico">Nome do Serviço</label>
+                    <input 
+                        type="text" 
+                        id="nome-servico" 
+                        name="nome-servico" 
+                        placeholder="Ex: Corte masculino, Hidratação, etc."
+                        required
+                    >
+                </div>
+                
+                <!-- Campo: Preço -->
+                <div class="grupo-campo">
+                    <label for="preco">Preço (R$)</label>
+                    <input 
+                        type="text" 
+                        id="preco" 
+                        name="preco" 
+                        placeholder="0,00"
+                        required
+                    >
+                </div>
+                
+                <!-- Botões de ação -->
+                <div class="botoes-formulario">
+                    <button type="submit" class="botao-salvar">Salvar</button>
+                    <a href="lista-servicos.html" class="botao-cancelar">Cancelar</a>
+                </div>
+                
+            </form>
             
-        </main>
+        </section>
         
     </div>
     

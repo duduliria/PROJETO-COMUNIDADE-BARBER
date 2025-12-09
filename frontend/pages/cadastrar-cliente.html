@@ -3,103 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Cliente - Salão</title>
+    <title>Cadastrar Cliente - Salão Beauty</title>
     <!-- Link para o arquivo de estilos CSS -->
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
-    <!-- Container Principal -->
-    <div class="container-principal">
+    <!-- ========================================
+         PÁGINA DE CADASTRO DE CLIENTE
+         Layout sem menu lateral conforme imagem
+         ======================================== -->
+    
+    <div class="pagina-cadastro">
         
-        <!-- ----------------------------------------
-             MENU LATERAL (ASIDE)
-             ---------------------------------------- -->
-        <aside class="menu-lateral">
-            
-            <!-- Logo do Sistema -->
-            <div class="logo">
-                <span class="icone-logo">✨</span>
-                <span>Salão</span>
+        <!-- Cabeçalho da página com botão voltar -->
+        <header class="cabecalho-cadastro">
+            <a href="lista-clientes.html" class="botao-voltar" title="Voltar">←</a>
+            <div class="info-cadastro">
+                <h1>Cadastrar Cliente</h1>
+                <p>Adicione um novo cliente ao sistema</p>
             </div>
-            
-            <!-- Seção: Home -->
-            <nav class="secao-menu">
-                <a href="../index.html" class="item-menu">
-                    <span class="icone">🏠</span>
-                    <span>Home</span>
-                </a>
-            </nav>
-            
-            <!-- Seção: Clientes -->
-            <div class="secao-menu">
-                <div class="titulo-secao">Clientes</div>
-                <a href="lista-clientes.html" class="item-menu">
-                    <span class="icone">👥</span>
-                    <span>Lista de Clientes</span>
-                </a>
-                <a href="cadastrar-cliente.html" class="item-menu ativo">
-                    <span class="icone">➕</span>
-                    <span>Cadastrar Cliente</span>
-                </a>
-            </div>
-            
-            <!-- Seção: Cabeleireiros -->
-            <div class="secao-menu">
-                <div class="titulo-secao">Cabeleireiros</div>
-                <a href="lista-cabeleireiros.html" class="item-menu">
-                    <span class="icone">✂️</span>
-                    <span>Lista de Cabeleireiros</span>
-                </a>
-                <a href="cadastrar-cabeleireiro.html" class="item-menu">
-                    <span class="icone">➕</span>
-                    <span>Cadastrar Cabeleireiro</span>
-                </a>
-            </div>
-            
-            <!-- Seção: Serviços -->
-            <div class="secao-menu">
-                <div class="titulo-secao">Serviços</div>
-                <a href="lista-servicos.html" class="item-menu">
-                    <span class="icone">📋</span>
-                    <span>Lista de Serviços</span>
-                </a>
-                <a href="cadastrar-servico.html" class="item-menu">
-                    <span class="icone">➕</span>
-                    <span>Cadastrar Serviço</span>
-                </a>
-            </div>
-            
-            <!-- Seção: Agendamentos -->
-            <div class="secao-menu">
-                <div class="titulo-secao">Agendamentos</div>
-                <a href="lista-agendamentos.html" class="item-menu">
-                    <span class="icone">📅</span>
-                    <span>Lista de Agendamentos</span>
-                </a>
-                <a href="novo-agendamento.html" class="item-menu">
-                    <span class="icone">📝</span>
-                    <span>Novo Agendamento</span>
-                </a>
-            </div>
-            
-        </aside>
+        </header>
         
-        <!-- Conteúdo Principal -->
-        <main class="conteudo-principal">
+        <!-- Card com o formulário -->
+        <section class="card-formulario">
             
-            <!-- Cabeçalho da página -->
-            <header class="cabecalho-pagina">
-                <h1 class="titulo-pagina">➕ Cadastrar Cliente</h1>
-                <p class="descricao-pagina">Adicione um novo cliente ao sistema.</p>
-            </header>
+            <!-- Título do formulário -->
+            <div class="titulo-formulario">
+                <span class="icone-titulo">👤</span>
+                <h2>Novo Cliente</h2>
+            </div>
+            <p class="subtitulo-formulario">Preencha os dados do cliente abaixo</p>
             
-            <!-- Conteúdo da página -->
-            <section class="conteudo-pagina-interna">
-                <h1>Página Cadastrar Cliente</h1>
-                <p>Formulário de cadastro será implementado aqui.</p>
-            </section>
+            <!-- Formulário de cadastro -->
+            <form id="formulario-cliente">
+                
+                <!-- Campo: Nome -->
+                <div class="grupo-campo">
+                    <label for="nome">Nome</label>
+                    <input 
+                        type="text" 
+                        id="nome" 
+                        name="nome" 
+                        placeholder="Nome completo do cliente"
+                        required
+                    >
+                </div>
+                
+                <!-- Campo: Telefone -->
+                <div class="grupo-campo">
+                    <label for="telefone">Telefone</label>
+                    <input 
+                        type="tel" 
+                        id="telefone" 
+                        name="telefone" 
+                        placeholder="(00) 00000-0000"
+                        required
+                    >
+                </div>
+                
+                <!-- Campo: Endereço -->
+                <div class="grupo-campo">
+                    <label for="endereco">Endereço</label>
+                    <input 
+                        type="text" 
+                        id="endereco" 
+                        name="endereco" 
+                        placeholder="Endereço completo"
+                    >
+                </div>
+                
+                <!-- Botões de ação -->
+                <div class="botoes-formulario">
+                    <button type="submit" class="botao-salvar">Salvar</button>
+                    <a href="lista-clientes.html" class="botao-cancelar">Cancelar</a>
+                </div>
+                
+            </form>
             
-        </main>
+        </section>
         
     </div>
     
