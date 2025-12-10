@@ -1,0 +1,179 @@
+// ========================================
+// ROTAS DE AGENDAMENTOS - CRUD COMPLETO
+// ========================================
+
+const express = require("express");
+const router = express.Router();
+const conexao = require("../configuracao/banco");
+
+// ----------------------------------------
+// LISTAR TODOS OS AGENDAMENTOS (GET)
+// Rota: GET /agendamentos
+// Retorna agendamentos com nomes do cliente, cabeleireiro e serviço
+// ----------------------------------------
+router.get("/", (req, res) => {
+  const sql = `
+        SELECT 
+            agendamentos.id,
+            agendamentos.data,
+            agendamentos.hora,
+            agendamentos.status,
+            clientes.nome AS cliente_nome,
+            cabeleireiros.nome AS cabeleireiro_nome,
+            servicos.nome AS servico_nome,
+            servicos.preco AS servico_preco
+        FROM agendamentos
+        LEFT JOIN clientes ON agendamentos.cliente_id = clientes.id
+        LEFT JOIN cabeleireiros ON agendamentos.cabeleireiro_id = cabeleireiros.id
+        LEFT JOIN servicos ON agendamentos.servico_id = servicos.id
+        ORDER BY agendamentos.data DESC, agendamentos.hora ASC
+    `;
+
+  conexao.query(sql, (erro, resultados) => {
+    if (erro) {
+      console.error("Erro ao buscar agendamentos:", erro);
+      return res.status(500).json({ erro: "Erro ao buscar agendamentos" });
+    }
+    res.json(resultados);
+  });
+});
+
+// ----------------------------------------
+// BUSCAR UM AGENDAMENTO POR ID (GET)
+// Rota: GET /agendamentos/:id
+// ----------------------------------------
+router.get("/:id", (req, res) => {
+  const { id } = req.params;
+  const sql = `
+        SELECT 
+            agendamentos.*,
+            clientes.nome AS cliente_nome,
+            cabeleireiros.nome AS cabeleireiro_nome,
+            servicos.nome AS servico_nome,
+            servicos.preco AS servico_preco
+        FROM agendamentos
+        LEFT JOIN clientes ON agendamentos.cliente_id = clientes.id
+        LEFT JOIN cabeleireiros ON agendamentos.cabeleireiro_id = cabeleireiros.id
+        LEFT JOIN servicos ON agendamentos.servico_id = servicos.id
+        WHERE agendamentos.id = ?
+    `;
+
+  conexao.query(sql, [id], (erro, resultados) => {
+    if (erro) {
+      console.error("Erro ao buscar agendamento:", erro);
+      return res.status(500).json({ erro: "Erro ao buscar agendamento" });
+    }
+
+    if (resultados.length === 0) {
+      return res.status(404).json({ erro: "Agendamento não encontrado" });
+    }
+
+    res.json(resultados[0]);
+  });
+});
+
+// ----------------------------------------
+// CADASTRAR NOVO AGENDAMENTO (POST)
+// Rota: POST /agendamentos
+// ----------------------------------------
+router.post("/", (req, res) => {
+  const { cliente_id, cabeleireiro_id, servico_id, data, hora, status } =
+    req.body;
+
+  // Validação simples
+  if (!cliente_id || !cabeleireiro_id || !servico_id || !data || !hora) {
+    return res.status(400).json({
+      erro: "Cliente, cabeleireiro, serviço, data e hora são obrigatórios",
+    });
+  }
+
+  // Status padrão é 'agendado' se não for informado
+  const statusFinal = status || "agendado";
+
+  const sql = `
+        INSERT INTO agendamentos (cliente_id, cabeleireiro_id, servico_id, data, hora, status) 
+        VALUES (?, ?, ?, ?, ?, ?)
+    `;
+
+  conexao.query(
+    sql,
+    [cliente_id, cabeleireiro_id, servico_id, data, hora, statusFinal],
+    (erro, resultado) => {
+      if (erro) {
+        console.error("Erro ao cadastrar agendamento:", erro);
+        return res.status(500).json({ erro: "Erro ao cadastrar agendamento" });
+      }
+
+      res.status(201).json({
+        mensagem: "Agendamento cadastrado com sucesso!",
+        id: resultado.insertId,
+      });
+    }
+  );
+});
+
+// ----------------------------------------
+// ATUALIZAR AGENDAMENTO (PUT)
+// Rota: PUT /agendamentos/:id
+// ----------------------------------------
+router.put("/:id", (req, res) => {
+  const { id } = req.params;
+  const { cliente_id, cabeleireiro_id, servico_id, data, hora, status } =
+    req.body;
+
+  // Validação simples
+  if (!cliente_id || !cabeleireiro_id || !servico_id || !data || !hora) {
+    return res.status(400).json({
+      erro: "Cliente, cabeleireiro, serviço, data e hora são obrigatórios",
+    });
+  }
+
+  const statusFinal = status || "agendado";
+
+  const sql = `
+        UPDATE agendamentos 
+        SET cliente_id = ?, cabeleireiro_id = ?, servico_id = ?, data = ?, hora = ?, status = ? 
+        WHERE id = ?
+    `;
+
+  conexao.query(
+    sql,
+    [cliente_id, cabeleireiro_id, servico_id, data, hora, statusFinal, id],
+    (erro, resultado) => {
+      if (erro) {
+        console.error("Erro ao atualizar agendamento:", erro);
+        return res.status(500).json({ erro: "Erro ao atualizar agendamento" });
+      }
+
+      if (resultado.affectedRows === 0) {
+        return res.status(404).json({ erro: "Agendamento não encontrado" });
+      }
+
+      res.json({ mensagem: "Agendamento atualizado com sucesso!" });
+    }
+  );
+});
+
+// ----------------------------------------
+// EXCLUIR AGENDAMENTO (DELETE)
+// Rota: DELETE /agendamentos/:id
+// ----------------------------------------
+router.delete("/:id", (req, res) => {
+  const { id } = req.params;
+  const sql = "DELETE FROM agendamentos WHERE id = ?";
+
+  conexao.query(sql, [id], (erro, resultado) => {
+    if (erro) {
+      console.error("Erro ao excluir agendamento:", erro);
+      return res.status(500).json({ erro: "Erro ao excluir agendamento" });
+    }
+
+    if (resultado.affectedRows === 0) {
+      return res.status(404).json({ erro: "Agendamento não encontrado" });
+    }
+
+    res.json({ mensagem: "Agendamento excluído com sucesso!" });
+  });
+});
+
+module.exports = router;
