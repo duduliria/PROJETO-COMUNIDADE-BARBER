@@ -97,15 +97,39 @@
             
             <!-- Conteúdo da página -->
             <section class="conteudo-pagina-interna">
-                <h1>Página Lista de Cabeleireiros</h1>
-                <p>Conteúdo da página será implementado aqui.</p>
+                
+                <!-- Botão adicionar -->
+                <div class="barra-acoes">
+                    <a href="cadastrar-cabeleireiro.html" class="botao-adicionar">➕ Novo Cabeleireiro</a>
+                </div>
+                
+                <!-- Tabela de cabeleireiros -->
+                <div class="tabela-container">
+                    <table class="tabela">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>Especialidade</th>
+                                <th>Telefone</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabela-cabeleireiros">
+                            <!-- Os dados serão carregados via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                
             </section>
             
         </main>
         
     </div>
     
-    <!-- Script de navegação -->
+    <!-- Scripts -->
+    <script src="../js/api.js"></script>
+    <script src="../js/cabeleireiros.js"></script>
     <script src="../js/navegacao.js"></script>
 </body>
 </html>

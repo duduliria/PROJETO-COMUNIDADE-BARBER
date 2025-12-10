@@ -97,15 +97,38 @@
             
             <!-- Conteúdo da página -->
             <section class="conteudo-pagina-interna">
-                <h1>Página Lista de Serviços</h1>
-                <p>Conteúdo da página será implementado aqui.</p>
+                
+                <!-- Botão adicionar -->
+                <div class="barra-acoes">
+                    <a href="cadastrar-servico.html" class="botao-adicionar">➕ Novo Serviço</a>
+                </div>
+                
+                <!-- Tabela de serviços -->
+                <div class="tabela-container">
+                    <table class="tabela">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>Preço</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabela-servicos">
+                            <!-- Os dados serão carregados via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                
             </section>
             
         </main>
         
     </div>
     
-    <!-- Script de navegação -->
+    <!-- Scripts -->
+    <script src="../js/api.js"></script>
+    <script src="../js/servicos.js"></script>
     <script src="../js/navegacao.js"></script>
 </body>
 </html>

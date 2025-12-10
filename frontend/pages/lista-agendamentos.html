@@ -97,15 +97,42 @@
             
             <!-- Conteúdo da página -->
             <section class="conteudo-pagina-interna">
-                <h1>Página Lista de Agendamentos</h1>
-                <p>Conteúdo da página será implementado aqui.</p>
+                
+                <!-- Botão adicionar -->
+                <div class="barra-acoes">
+                    <a href="novo-agendamento.html" class="botao-adicionar">➕ Novo Agendamento</a>
+                </div>
+                
+                <!-- Tabela de agendamentos -->
+                <div class="tabela-container">
+                    <table class="tabela">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Cliente</th>
+                                <th>Cabeleireiro</th>
+                                <th>Serviço</th>
+                                <th>Data</th>
+                                <th>Hora</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabela-agendamentos">
+                            <!-- Os dados serão carregados via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                
             </section>
             
         </main>
         
     </div>
     
-    <!-- Script de navegação -->
+    <!-- Scripts -->
+    <script src="../js/api.js"></script>
+    <script src="../js/agendamentos.js"></script>
     <script src="../js/navegacao.js"></script>
 </body>
 </html>

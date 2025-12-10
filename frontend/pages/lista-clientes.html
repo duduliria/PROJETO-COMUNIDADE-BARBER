@@ -97,15 +97,39 @@
             
             <!-- Conteúdo da página -->
             <section class="conteudo-pagina-interna">
-                <h1>Página Lista de Clientes</h1>
-                <p>Conteúdo da página será implementado aqui.</p>
+                
+                <!-- Botão adicionar -->
+                <div class="barra-acoes">
+                    <a href="cadastrar-cliente.html" class="botao-adicionar">➕ Novo Cliente</a>
+                </div>
+                
+                <!-- Tabela de clientes -->
+                <div class="tabela-container">
+                    <table class="tabela">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>Telefone</th>
+                                <th>Endereço</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabela-clientes">
+                            <!-- Os dados serão carregados via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                
             </section>
             
         </main>
         
     </div>
     
-    <!-- Script de navegação -->
+    <!-- Scripts -->
+    <script src="../js/api.js"></script>
+    <script src="../js/clientes.js"></script>
     <script src="../js/navegacao.js"></script>
 </body>
 </html>

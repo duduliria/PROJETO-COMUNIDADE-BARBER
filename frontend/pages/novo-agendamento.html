@@ -95,13 +95,76 @@
 
         <!-- Conteúdo da página -->
         <section class="conteudo-pagina-interna">
-          <h1>Página Novo Agendamento</h1>
-          <p>Formulário de agendamento será implementado aqui.</p>
+          
+          <!-- Formulário de agendamento -->
+          <div class="card-formulario">
+            <form id="formulario-agendamento">
+              
+              <!-- Campo: Cliente -->
+              <div class="grupo-campo">
+                <label for="cliente">Cliente</label>
+                <select id="cliente" name="cliente" required>
+                  <option value="">Selecione um cliente</option>
+                  <!-- Opções carregadas via JavaScript -->
+                </select>
+              </div>
+              
+              <!-- Campo: Cabeleireiro -->
+              <div class="grupo-campo">
+                <label for="cabeleireiro">Cabeleireiro</label>
+                <select id="cabeleireiro" name="cabeleireiro" required>
+                  <option value="">Selecione um cabeleireiro</option>
+                  <!-- Opções carregadas via JavaScript -->
+                </select>
+              </div>
+              
+              <!-- Campo: Serviço -->
+              <div class="grupo-campo">
+                <label for="servico">Serviço</label>
+                <select id="servico" name="servico" required>
+                  <option value="">Selecione um serviço</option>
+                  <!-- Opções carregadas via JavaScript -->
+                </select>
+              </div>
+              
+              <!-- Campo: Data -->
+              <div class="grupo-campo">
+                <label for="data">Data</label>
+                <input type="date" id="data" name="data" required>
+              </div>
+              
+              <!-- Campo: Hora -->
+              <div class="grupo-campo">
+                <label for="hora">Hora</label>
+                <input type="time" id="hora" name="hora" required>
+              </div>
+              
+              <!-- Campo: Status -->
+              <div class="grupo-campo">
+                <label for="status">Status</label>
+                <select id="status" name="status">
+                  <option value="agendado">Agendado</option>
+                  <option value="concluido">Concluído</option>
+                  <option value="cancelado">Cancelado</option>
+                </select>
+              </div>
+              
+              <!-- Botões de ação -->
+              <div class="botoes-formulario">
+                <button type="submit" class="botao-salvar">Salvar</button>
+                <a href="lista-agendamentos.html" class="botao-cancelar">Cancelar</a>
+              </div>
+              
+            </form>
+          </div>
+          
         </section>
       </main>
     </div>
 
-    <!-- Script de navegação -->
+    <!-- Scripts -->
+    <script src="../js/api.js"></script>
+    <script src="../js/agendamentos.js"></script>
     <script src="../js/navegacao.js"></script>
   </body>
 </html>
