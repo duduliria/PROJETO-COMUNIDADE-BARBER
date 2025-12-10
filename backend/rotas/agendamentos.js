@@ -87,29 +87,49 @@ router.post("/", (req, res) => {
     });
   }
 
-  // Status padrão é 'agendado' se não for informado
-  const statusFinal = status || "agendado";
+  // Verifica se já existe agendamento no mesmo dia e horário para o mesmo cabeleireiro
+  const sqlVerifica = `
+    SELECT id FROM agendamentos 
+    WHERE cabeleireiro_id = ? AND data = ? AND hora = ? AND status != 'cancelado'
+  `;
 
-  const sql = `
-        INSERT INTO agendamentos (cliente_id, cabeleireiro_id, servico_id, data, hora, status) 
-        VALUES (?, ?, ?, ?, ?, ?)
-    `;
+  conexao.query(sqlVerifica, [cabeleireiro_id, data, hora], (erroVerifica, resultadosVerifica) => {
+    if (erroVerifica) {
+      console.error("Erro ao verificar disponibilidade:", erroVerifica);
+      return res.status(500).json({ erro: "Erro ao verificar disponibilidade" });
+    }
 
-  conexao.query(
-    sql,
-    [cliente_id, cabeleireiro_id, servico_id, data, hora, statusFinal],
-    (erro, resultado) => {
-      if (erro) {
-        console.error("Erro ao cadastrar agendamento:", erro);
-        return res.status(500).json({ erro: "Erro ao cadastrar agendamento" });
-      }
-
-      res.status(201).json({
-        mensagem: "Agendamento cadastrado com sucesso!",
-        id: resultado.insertId,
+    // Se já existe agendamento, retorna erro
+    if (resultadosVerifica.length > 0) {
+      return res.status(400).json({
+        erro: "Já existe um agendamento para este cabeleireiro neste dia e horário",
       });
     }
-  );
+
+    // Status padrão é 'agendado' se não for informado
+    const statusFinal = status || "agendado";
+
+    const sql = `
+      INSERT INTO agendamentos (cliente_id, cabeleireiro_id, servico_id, data, hora, status) 
+      VALUES (?, ?, ?, ?, ?, ?)
+    `;
+
+    conexao.query(
+      sql,
+      [cliente_id, cabeleireiro_id, servico_id, data, hora, statusFinal],
+      (erro, resultado) => {
+        if (erro) {
+          console.error("Erro ao cadastrar agendamento:", erro);
+          return res.status(500).json({ erro: "Erro ao cadastrar agendamento" });
+        }
+
+        res.status(201).json({
+          mensagem: "Agendamento cadastrado com sucesso!",
+          id: resultado.insertId,
+        });
+      }
+    );
+  });
 });
 
 // ----------------------------------------
@@ -128,30 +148,50 @@ router.put("/:id", (req, res) => {
     });
   }
 
-  const statusFinal = status || "agendado";
+  // Verifica se já existe outro agendamento no mesmo dia e horário (exceto o atual)
+  const sqlVerifica = `
+    SELECT id FROM agendamentos 
+    WHERE cabeleireiro_id = ? AND data = ? AND hora = ? AND id != ? AND status != 'cancelado'
+  `;
 
-  const sql = `
-        UPDATE agendamentos 
-        SET cliente_id = ?, cabeleireiro_id = ?, servico_id = ?, data = ?, hora = ?, status = ? 
-        WHERE id = ?
+  conexao.query(sqlVerifica, [cabeleireiro_id, data, hora, id], (erroVerifica, resultadosVerifica) => {
+    if (erroVerifica) {
+      console.error("Erro ao verificar disponibilidade:", erroVerifica);
+      return res.status(500).json({ erro: "Erro ao verificar disponibilidade" });
+    }
+
+    // Se já existe outro agendamento, retorna erro
+    if (resultadosVerifica.length > 0) {
+      return res.status(400).json({
+        erro: "Já existe um agendamento para este cabeleireiro neste dia e horário",
+      });
+    }
+
+    const statusFinal = status || "agendado";
+
+    const sql = `
+      UPDATE agendamentos 
+      SET cliente_id = ?, cabeleireiro_id = ?, servico_id = ?, data = ?, hora = ?, status = ? 
+      WHERE id = ?
     `;
 
-  conexao.query(
-    sql,
-    [cliente_id, cabeleireiro_id, servico_id, data, hora, statusFinal, id],
-    (erro, resultado) => {
-      if (erro) {
-        console.error("Erro ao atualizar agendamento:", erro);
-        return res.status(500).json({ erro: "Erro ao atualizar agendamento" });
-      }
+    conexao.query(
+      sql,
+      [cliente_id, cabeleireiro_id, servico_id, data, hora, statusFinal, id],
+      (erro, resultado) => {
+        if (erro) {
+          console.error("Erro ao atualizar agendamento:", erro);
+          return res.status(500).json({ erro: "Erro ao atualizar agendamento" });
+        }
 
-      if (resultado.affectedRows === 0) {
-        return res.status(404).json({ erro: "Agendamento não encontrado" });
-      }
+        if (resultado.affectedRows === 0) {
+          return res.status(404).json({ erro: "Agendamento não encontrado" });
+        }
 
-      res.json({ mensagem: "Agendamento atualizado com sucesso!" });
-    }
-  );
+        res.json({ mensagem: "Agendamento atualizado com sucesso!" });
+      }
+    );
+  });
 });
 
 // ----------------------------------------
