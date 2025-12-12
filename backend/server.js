@@ -15,8 +15,8 @@ const rotasAgendamentos = require("./rotas/agendamentos");
 const app = express();
 
 // Middlewares
-app.use(cors()); // Permite requisições de outros domínios
-app.use(express.json()); // Permite receber JSON no body das requisições
+app.use(cors()); 
+app.use(express.json()); 
 
 // ========================================
 // CONFIGURAÇÃO DAS ROTAS

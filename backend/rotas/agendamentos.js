@@ -1,16 +1,7 @@
-// ========================================
-// ROTAS DE AGENDAMENTOS - CRUD COMPLETO
-// ========================================
-
 const express = require("express");
 const router = express.Router();
 const conexao = require("../configuracao/banco");
 
-// ----------------------------------------
-// LISTAR TODOS OS AGENDAMENTOS (GET)
-// Rota: GET /agendamentos
-// Retorna agendamentos com nomes do cliente, cabeleireiro e serviço
-// ----------------------------------------
 router.get("/", (req, res) => {
   const sql = `
         SELECT 
@@ -38,10 +29,7 @@ router.get("/", (req, res) => {
   });
 });
 
-// ----------------------------------------
-// BUSCAR UM AGENDAMENTO POR ID (GET)
-// Rota: GET /agendamentos/:id
-// ----------------------------------------
+
 router.get("/:id", (req, res) => {
   const { id } = req.params;
   const sql = `
@@ -72,10 +60,6 @@ router.get("/:id", (req, res) => {
   });
 });
 
-// ----------------------------------------
-// CADASTRAR NOVO AGENDAMENTO (POST)
-// Rota: POST /agendamentos
-// ----------------------------------------
 router.post("/", (req, res) => {
   const { cliente_id, cabeleireiro_id, servico_id, data, hora, status } =
     req.body;
@@ -193,6 +177,7 @@ router.put("/:id", (req, res) => {
     );
   });
 });
+
 
 // ----------------------------------------
 // EXCLUIR AGENDAMENTO (DELETE)

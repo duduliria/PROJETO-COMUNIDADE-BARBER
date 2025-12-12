@@ -34,8 +34,8 @@ async function carregarServicos() {
                 <td>${servico.nome}</td>
                 <td>R$ ${parseFloat(servico.preco).toFixed(2).replace('.', ',')}</td>
                 <td class="acoes">
-                    <button class="botao-editar" onclick="editarServico(${servico.id})">✏️ Editar</button>
-                    <button class="botao-excluir" onclick="excluirServico(${servico.id})">🗑️ Excluir</button>
+                    <button class="botao-editar" onclick="editarServico(${servico.id})">Editar</button>
+                    <button class="botao-excluir" onclick="excluirServico(${servico.id})">Excluir</button>
                 </td>
             `;
             tabela.appendChild(linha);

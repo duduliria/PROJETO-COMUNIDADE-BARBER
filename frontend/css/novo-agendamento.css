@@ -1,14 +1,71 @@
-/* ========================================
-   ESTILOS DA PÁGINA - NOVO AGENDAMENTO
-   Estilos específicos para esta página
-   ======================================== */
+.card-formulario {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
 
-/* 
-   Adicione aqui estilos específicos para 
-   a página de novo agendamento, como:
-   - Formulário de agendamento
-   - Seletor de data/hora
-   - Seletor de cliente
-   - Seletor de cabeleireiro
-   - Seletor de serviço
-*/
+.grupo-campo {
+    margin-bottom: 20px;
+}
+
+.grupo-campo label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.grupo-campo input,
+.grupo-campo select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+}
+
+.grupo-campo input:focus,
+.grupo-campo select:focus {
+    outline: none;
+    border-color: #7c3aed;
+}
+
+.botoes-formulario {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.botao-salvar {
+    background-color: #7c3aed;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.botao-salvar:hover {
+    background-color: #6d28d9;
+}
+
+.botao-cancelar {
+    background-color: #f3f4f6;
+    color: #374151;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.botao-cancelar:hover {
+    background-color: #e5e7eb;
+}

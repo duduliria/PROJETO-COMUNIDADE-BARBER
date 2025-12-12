@@ -1,11 +1,4 @@
-// ========================================
-// CABELEIREIROS - FUNÇÕES DO FRONTEND
-// Arquivo com todas as funções para gerenciar cabeleireiros
-// ========================================
 
-// ----------------------------------------
-// CARREGAR LISTA DE CABELEIREIROS
-// ----------------------------------------
 async function carregarCabeleireiros() {
     try {
         const resposta = await fetch(`${API_URL}/cabeleireiros`);
@@ -35,8 +28,8 @@ async function carregarCabeleireiros() {
                 <td>${cabeleireiro.especialidade}</td>
                 <td>${cabeleireiro.telefone}</td>
                 <td class="acoes">
-                    <button class="botao-editar" onclick="editarCabeleireiro(${cabeleireiro.id})">✏️ Editar</button>
-                    <button class="botao-excluir" onclick="excluirCabeleireiro(${cabeleireiro.id})">🗑️ Excluir</button>
+                    <button class="botao-editar" onclick="editarCabeleireiro(${cabeleireiro.id})">Editar</button>
+                    <button class="botao-excluir" onclick="excluirCabeleireiro(${cabeleireiro.id})">Excluir</button>
                 </td>
             `;
             tabela.appendChild(linha);

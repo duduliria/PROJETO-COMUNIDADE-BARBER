@@ -11,17 +11,12 @@ body {
     line-height: 1.6;
 }
 
-/* ----------------------------------------
-   CONTAINER PRINCIPAL (LAYOUT)
-   ---------------------------------------- */
+
 .container-principal {
     display: flex;
     min-height: 100vh;
 }
 
-/* ----------------------------------------
-   MENU LATERAL (ASIDE)
-   ---------------------------------------- */
 .menu-lateral {
     width: 220px;
     background-color: #ffffff;
@@ -94,9 +89,7 @@ body {
     text-align: center;
 }
 
-/* ----------------------------------------
-   CONTEÚDO PRINCIPAL
-   ---------------------------------------- */
+
 .conteudo-principal {
     flex: 1;
     margin-left: 220px;
@@ -104,9 +97,7 @@ body {
     background-color: #f8f8f8;
 }
 
-/* ----------------------------------------
-   CABEÇALHO DA PÁGINA
-   ---------------------------------------- */
+
 .cabecalho-pagina {
     margin-bottom: 30px;
 }

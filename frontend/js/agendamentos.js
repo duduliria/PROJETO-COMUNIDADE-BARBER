@@ -1,11 +1,3 @@
-// ========================================
-// AGENDAMENTOS - FUNÇÕES DO FRONTEND
-// Arquivo com todas as funções para gerenciar agendamentos
-// ========================================
-
-// ----------------------------------------
-// CARREGAR LISTA DE AGENDAMENTOS
-// ----------------------------------------
 async function carregarAgendamentos() {
     try {
         const resposta = await fetch(`${API_URL}/agendamentos`);
@@ -60,8 +52,8 @@ async function carregarAgendamentos() {
                 <td>${hora}</td>
                 <td><span class="status ${corStatus}">${agendamento.status}</span></td>
                 <td class="acoes">
-                    <button class="botao-editar" onclick="editarAgendamento(${agendamento.id})">✏️ Editar</button>
-                    <button class="botao-excluir" onclick="excluirAgendamento(${agendamento.id})">🗑️ Excluir</button>
+                    <button class="botao-editar" onclick="editarAgendamento(${agendamento.id})">Editar</button>
+                    <button class="botao-excluir" onclick="excluirAgendamento(${agendamento.id})">Excluir</button>
                 </td>
             `;
             tabela.appendChild(linha);
@@ -73,9 +65,6 @@ async function carregarAgendamentos() {
     }
 }
 
-// ----------------------------------------
-// CARREGAR OPÇÕES DOS SELECTS (CLIENTES, CABELEIREIROS, SERVIÇOS)
-// ----------------------------------------
 async function carregarOpcoesSelects() {
     try {
         // Carrega clientes
@@ -196,8 +185,8 @@ async function carregarAgendamentoParaEdicao() {
                 document.getElementById('status').value = agendamento.status;
             }, 500);
             
-            // Muda o título da página
-            document.querySelector('h1').textContent = '📝 Editar Agendamento';
+            // Muda o titulo da pagina
+            document.querySelector('h1').textContent = 'Editar Agendamento';
             document.querySelector('.botao-salvar').textContent = 'Atualizar';
             
             // Guarda o ID para usar na atualização

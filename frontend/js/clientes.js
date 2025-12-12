@@ -35,8 +35,8 @@ async function carregarClientes() {
                 <td>${cliente.telefone}</td>
                 <td>${cliente.endereco || '-'}</td>
                 <td class="acoes">
-                    <button class="botao-editar" onclick="editarCliente(${cliente.id})">✏️ Editar</button>
-                    <button class="botao-excluir" onclick="excluirCliente(${cliente.id})">🗑️ Excluir</button>
+                    <button class="botao-editar" onclick="editarCliente(${cliente.id})">Editar</button>
+                    <button class="botao-excluir" onclick="excluirCliente(${cliente.id})">Excluir</button>
                 </td>
             `;
             tabela.appendChild(linha);

@@ -85,9 +85,6 @@
     border-color: #ccc;
 }
 
-/* ----------------------------------------
-   SEÇÃO DE AÇÕES RÁPIDAS
-   ---------------------------------------- */
 .secao-acoes-rapidas {
     background-color: #ffffff;
     border-radius: 12px;
@@ -150,9 +147,6 @@
     border-color: #7c3aed;
 }
 
-/* ----------------------------------------
-   RESPONSIVIDADE DA PÁGINA HOME
-   ---------------------------------------- */
 @media (max-width: 900px) {
     .grid-cards {
         grid-template-columns: 1fr;
