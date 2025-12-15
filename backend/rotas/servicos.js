@@ -1,15 +1,7 @@
-// ========================================
-// ROTAS DE SERVIÇOS - CRUD COMPLETO
-// ========================================
-
 const express = require("express");
 const router = express.Router();
 const conexao = require("../configuracao/banco");
 
-// ----------------------------------------
-// LISTAR TODOS OS SERVIÇOS (GET)
-// Rota: GET /servicos
-// ----------------------------------------
 router.get("/", (req, res) => {
   const sql = "SELECT * FROM servicos";
 
@@ -22,10 +14,6 @@ router.get("/", (req, res) => {
   });
 });
 
-// ----------------------------------------
-// BUSCAR UM SERVIÇO POR ID (GET)
-// Rota: GET /servicos/:id
-// ----------------------------------------
 router.get("/:id", (req, res) => {
   const { id } = req.params;
   const sql = "SELECT * FROM servicos WHERE id = ?";
@@ -44,10 +32,6 @@ router.get("/:id", (req, res) => {
   });
 });
 
-// ----------------------------------------
-// CADASTRAR NOVO SERVIÇO (POST)
-// Rota: POST /servicos
-// ----------------------------------------
 router.post("/", (req, res) => {
   const { nome, preco } = req.body;
 
@@ -71,10 +55,6 @@ router.post("/", (req, res) => {
   });
 });
 
-// ----------------------------------------
-// ATUALIZAR SERVIÇO (PUT)
-// Rota: PUT /servicos/:id
-// ----------------------------------------
 router.put("/:id", (req, res) => {
   const { id } = req.params;
   const { nome, preco } = req.body;
@@ -100,10 +80,6 @@ router.put("/:id", (req, res) => {
   });
 });
 
-// ----------------------------------------
-// EXCLUIR SERVIÇO (DELETE)
-// Rota: DELETE /servicos/:id
-// ----------------------------------------
 router.delete("/:id", (req, res) => {
   const { id } = req.params;
   const sql = "DELETE FROM servicos WHERE id = ?";

@@ -116,10 +116,6 @@ router.post("/", (req, res) => {
   });
 });
 
-// ----------------------------------------
-// ATUALIZAR AGENDAMENTO (PUT)
-// Rota: PUT /agendamentos/:id
-// ----------------------------------------
 router.put("/:id", (req, res) => {
   const { id } = req.params;
   const { cliente_id, cabeleireiro_id, servico_id, data, hora, status } =
@@ -179,10 +175,6 @@ router.put("/:id", (req, res) => {
 });
 
 
-// ----------------------------------------
-// EXCLUIR AGENDAMENTO (DELETE)
-// Rota: DELETE /agendamentos/:id
-// ----------------------------------------
 router.delete("/:id", (req, res) => {
   const { id } = req.params;
   const sql = "DELETE FROM agendamentos WHERE id = ?";

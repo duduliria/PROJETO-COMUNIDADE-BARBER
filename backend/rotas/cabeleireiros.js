@@ -1,15 +1,7 @@
-// ========================================
-// ROTAS DE CABELEIREIROS - CRUD COMPLETO
-// ========================================
-
 const express = require("express");
 const router = express.Router();
 const conexao = require("../configuracao/banco");
 
-// ----------------------------------------
-// LISTAR TODOS OS CABELEIREIROS (GET)
-// Rota: GET /cabeleireiros
-// ----------------------------------------
 router.get("/", (req, res) => {
   const sql = "SELECT * FROM cabeleireiros";
 
@@ -22,10 +14,6 @@ router.get("/", (req, res) => {
   });
 });
 
-// ----------------------------------------
-// BUSCAR UM CABELEIREIRO POR ID (GET)
-// Rota: GET /cabeleireiros/:id
-// ----------------------------------------
 router.get("/:id", (req, res) => {
   const { id } = req.params;
   const sql = "SELECT * FROM cabeleireiros WHERE id = ?";
@@ -44,10 +32,6 @@ router.get("/:id", (req, res) => {
   });
 });
 
-// ----------------------------------------
-// CADASTRAR NOVO CABELEIREIRO (POST)
-// Rota: POST /cabeleireiros
-// ----------------------------------------
 router.post("/", (req, res) => {
   const { nome, especialidade, telefone } = req.body;
 
@@ -74,10 +58,6 @@ router.post("/", (req, res) => {
   });
 });
 
-// ----------------------------------------
-// ATUALIZAR CABELEIREIRO (PUT)
-// Rota: PUT /cabeleireiros/:id
-// ----------------------------------------
 router.put("/:id", (req, res) => {
   const { id } = req.params;
   const { nome, especialidade, telefone } = req.body;
@@ -106,10 +86,6 @@ router.put("/:id", (req, res) => {
   });
 });
 
-// ----------------------------------------
-// EXCLUIR CABELEIREIRO (DELETE)
-// Rota: DELETE /cabeleireiros/:id
-// ----------------------------------------
 router.delete("/:id", (req, res) => {
   const { id } = req.params;
   const sql = "DELETE FROM cabeleireiros WHERE id = ?";

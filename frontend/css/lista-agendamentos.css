@@ -1,5 +1,7 @@
 .tabela-container {
-    background-color: #ffffff;
+  background-image: url("../../imagem1.jpg");
+  background-color: rgba(0, 0, 0, 0.7);
+  background-size: 400px;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

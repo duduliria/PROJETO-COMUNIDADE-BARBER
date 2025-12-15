@@ -109,9 +109,6 @@ async function carregarOpcoesSelects() {
     }
 }
 
-// ----------------------------------------
-// CADASTRAR NOVO AGENDAMENTO
-// ----------------------------------------
 async function cadastrarAgendamento(evento) {
     evento.preventDefault();
     
@@ -146,16 +143,10 @@ async function cadastrarAgendamento(evento) {
     }
 }
 
-// ----------------------------------------
-// EDITAR AGENDAMENTO - Redireciona para página de edição
-// ----------------------------------------
 function editarAgendamento(id) {
     window.location.href = `novo-agendamento.html?id=${id}`;
 }
 
-// ----------------------------------------
-// CARREGAR DADOS DO AGENDAMENTO PARA EDIÇÃO
-// ----------------------------------------
 async function carregarAgendamentoParaEdicao() {
     // Pega o ID da URL
     const parametros = new URLSearchParams(window.location.search);
@@ -202,9 +193,6 @@ async function carregarAgendamentoParaEdicao() {
     }
 }
 
-// ----------------------------------------
-// ATUALIZAR AGENDAMENTO
-// ----------------------------------------
 async function atualizarAgendamento(id, dados) {
     try {
         const resposta = await fetch(`${API_URL}/agendamentos/${id}`, {
@@ -230,9 +218,6 @@ async function atualizarAgendamento(id, dados) {
     }
 }
 
-// ----------------------------------------
-// SALVAR AGENDAMENTO (CADASTRAR OU ATUALIZAR)
-// ----------------------------------------
 async function salvarAgendamento(evento) {
     evento.preventDefault();
     
@@ -257,9 +242,6 @@ async function salvarAgendamento(evento) {
     }
 }
 
-// ----------------------------------------
-// EXCLUIR AGENDAMENTO
-// ----------------------------------------
 async function excluirAgendamento(id) {
     if (!confirm('Tem certeza que deseja excluir este agendamento?')) {
         return;
@@ -285,9 +267,6 @@ async function excluirAgendamento(id) {
     }
 }
 
-// ----------------------------------------
-// INICIALIZAÇÃO
-// ----------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
     // Se estiver na página de lista
     if (document.getElementById('tabela-agendamentos')) {

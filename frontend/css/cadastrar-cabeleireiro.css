@@ -1,12 +1,13 @@
 .pagina-cadastro {
     min-height: 100vh;
-    background-color: #f8f8f8;
+    background-color: #c4bebe;
     padding: 30px 40px;
+    background-image: url("../../imagem1.jpg");
+  background-color: rgba(0, 0, 0, 0.7);
+  background-size: 400px;
+  background-blend-mode: darken;
 }
 
-/* ----------------------------------------
-   CABEÇALHO DA PÁGINA DE CADASTRO
-   ---------------------------------------- */
 .cabecalho-cadastro {
     display: flex;
     align-items: flex-start;
@@ -19,7 +20,7 @@
     border: none;
     font-size: 20px;
     cursor: pointer;
-    color: #333;
+    color: #fff;
     padding: 5px;
     display: flex;
     align-items: center;
@@ -28,36 +29,31 @@
 }
 
 .botao-voltar:hover {
-    color: #7c3aed;
+    color: #000000;
 }
 
 .info-cadastro h1 {
     font-size: 24px;
     font-weight: bold;
-    color: #1a1a2e;
+    color: #fff;
     margin-bottom: 4px;
 }
 
 .info-cadastro p {
     font-size: 14px;
-    color: #666;
+    color: #fff;
 }
 
-/* ----------------------------------------
-   CARD DO FORMULÁRIO
-   ---------------------------------------- */
 .card-formulario {
-    background-color: #ffffff;
+    background-color: #c4bebe;
     border-radius: 12px;
+    color: white;
     padding: 30px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-    border: 1px solid #eee;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    border: 2.9px solid white;
     max-width: 600px;
 }
 
-/* ----------------------------------------
-   TÍTULO DO FORMULÁRIO
-   ---------------------------------------- */
 .titulo-formulario {
     display: flex;
     align-items: center;
@@ -72,18 +68,15 @@
 .titulo-formulario h2 {
     font-size: 16px;
     font-weight: bold;
-    color: #1a1a2e;
+    color: #ffffff;
 }
 
 .subtitulo-formulario {
     font-size: 13px;
-    color: #888;
+    color: #ffffff;
     margin-bottom: 25px;
 }
 
-/* ----------------------------------------
-   CAMPOS DO FORMULÁRIO
-   ---------------------------------------- */
 .grupo-campo {
     margin-bottom: 20px;
 }
@@ -92,7 +85,7 @@
     display: block;
     font-size: 14px;
     font-weight: 600;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 8px;
 }
 
@@ -109,11 +102,12 @@
     transition: border-color 0.2s ease;
 }
 
-.grupo-campo input:focus,
-.grupo-campo select:focus,
-.grupo-campo textarea:focus {
+.grupo-campo input,
+.grupo-campo select,
+.grupo-campo textarea {
     outline: none;
-    border-color: #7c3aed;
+    border: 2.5px solid rgb(0, 0, 0);
+    box-shadow: 0 0 100px white;
 }
 
 .grupo-campo input::placeholder,
@@ -121,9 +115,6 @@
     color: #aaa;
 }
 
-/* ----------------------------------------
-   BOTÕES DO FORMULÁRIO
-   ---------------------------------------- */
 .botoes-formulario {
     display: flex;
     gap: 12px;
@@ -132,9 +123,10 @@
 
 .botao-salvar {
     padding: 12px 24px;
-    background-color: #7c3aed;
+    background-color: #968d8d;
     color: #ffffff;
-    border: none;
+    border: 2.5px solid white;
+    box-shadow:  0 0 100px;
     border-radius: 8px;
     font-size: 14px;
     font-weight: 600;
@@ -143,14 +135,15 @@
 }
 
 .botao-salvar:hover {
-    background-color: #6d28d9;
+    background-color: #968d8d;
 }
 
 .botao-cancelar {
     padding: 12px 24px;
-    background-color: #f3f4f6;
-    color: #333;
-    border: 1px solid #e0e0e0;
+    background-color: #ff8080;
+    color: #ffffff;
+    border: 2.9px solid white;
+    box-shadow: 0  0 100px white;
     border-radius: 8px;
     font-size: 14px;
     font-weight: 600;

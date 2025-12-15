@@ -3,6 +3,10 @@
     min-height: 100vh;
     background-color: #f8f8f8;
     padding: 30px 40px;
+      background-image: url("../../imagem1.jpg");
+  background-color: rgba(0, 0, 0, 0.7);
+  background-size: 400px;
+  background-blend-mode: darken;
 }
 
 .cabecalho-cadastro {
@@ -17,7 +21,7 @@
     border: none;
     font-size: 20px;
     cursor: pointer;
-    color: #333;
+    color: #fff;
     padding: 5px;
     display: flex;
     align-items: center;
@@ -32,22 +36,22 @@
 .info-cadastro h1 {
     font-size: 24px;
     font-weight: bold;
-    color: #1a1a2e;
+    color: #fff;
     margin-bottom: 4px;
 }
 
 .info-cadastro p {
     font-size: 14px;
-    color: #666;
+    color: #fff;
 }
 
 
 .card-formulario {
-    background-color: #ffffff;
+    background-color: #c4bebe;
     border-radius: 12px;
     padding: 30px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-    border: 1px solid #eee;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    border: 2.9px solid white;
     max-width: 600px;
 }
 

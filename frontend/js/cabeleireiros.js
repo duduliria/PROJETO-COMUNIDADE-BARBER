@@ -41,9 +41,6 @@ async function carregarCabeleireiros() {
     }
 }
 
-// ----------------------------------------
-// CADASTRAR NOVO CABELEIREIRO
-// ----------------------------------------
 async function cadastrarCabeleireiro(evento) {
     evento.preventDefault();
     
@@ -75,16 +72,10 @@ async function cadastrarCabeleireiro(evento) {
     }
 }
 
-// ----------------------------------------
-// EDITAR CABELEIREIRO - Redireciona para página de edição
-// ----------------------------------------
 function editarCabeleireiro(id) {
     window.location.href = `cadastrar-cabeleireiro.html?id=${id}`;
 }
 
-// ----------------------------------------
-// CARREGAR DADOS DO CABELEIREIRO PARA EDIÇÃO
-// ----------------------------------------
 async function carregarCabeleireiroParaEdicao() {
     // Pega o ID da URL
     const parametros = new URLSearchParams(window.location.search);
@@ -120,9 +111,6 @@ async function carregarCabeleireiroParaEdicao() {
     }
 }
 
-// ----------------------------------------
-// ATUALIZAR CABELEIREIRO
-// ----------------------------------------
 async function atualizarCabeleireiro(id, dados) {
     try {
         const resposta = await fetch(`${API_URL}/cabeleireiros/${id}`, {
@@ -148,9 +136,6 @@ async function atualizarCabeleireiro(id, dados) {
     }
 }
 
-// ----------------------------------------
-// SALVAR CABELEIREIRO (CADASTRAR OU ATUALIZAR)
-// ----------------------------------------
 async function salvarCabeleireiro(evento) {
     evento.preventDefault();
     
@@ -172,9 +157,6 @@ async function salvarCabeleireiro(evento) {
     }
 }
 
-// ----------------------------------------
-// EXCLUIR CABELEIREIRO
-// ----------------------------------------
 async function excluirCabeleireiro(id) {
     if (!confirm('Tem certeza que deseja excluir este cabeleireiro?')) {
         return;
@@ -200,9 +182,6 @@ async function excluirCabeleireiro(id) {
     }
 }
 
-// ----------------------------------------
-// INICIALIZAÇÃO
-// ----------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
     // Se estiver na página de lista
     if (document.getElementById('tabela-cabeleireiros')) {

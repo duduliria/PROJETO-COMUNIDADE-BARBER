@@ -1,11 +1,3 @@
-// ========================================
-// SERVIÇOS - FUNÇÕES DO FRONTEND
-// Arquivo com todas as funções para gerenciar serviços
-// ========================================
-
-// ----------------------------------------
-// CARREGAR LISTA DE SERVIÇOS
-// ----------------------------------------
 async function carregarServicos() {
     try {
         const resposta = await fetch(`${API_URL}/servicos`);
@@ -47,9 +39,6 @@ async function carregarServicos() {
     }
 }
 
-// ----------------------------------------
-// CADASTRAR NOVO SERVIÇO
-// ----------------------------------------
 async function cadastrarServico(evento) {
     evento.preventDefault();
     
@@ -88,16 +77,10 @@ async function cadastrarServico(evento) {
     }
 }
 
-// ----------------------------------------
-// EDITAR SERVIÇO - Redireciona para página de edição
-// ----------------------------------------
 function editarServico(id) {
     window.location.href = `cadastrar-servico.html?id=${id}`;
 }
 
-// ----------------------------------------
-// CARREGAR DADOS DO SERVIÇO PARA EDIÇÃO
-// ----------------------------------------
 async function carregarServicoParaEdicao() {
     // Pega o ID da URL
     const parametros = new URLSearchParams(window.location.search);
@@ -132,9 +115,6 @@ async function carregarServicoParaEdicao() {
     }
 }
 
-// ----------------------------------------
-// ATUALIZAR SERVIÇO
-// ----------------------------------------
 async function atualizarServico(id, dados) {
     try {
         const resposta = await fetch(`${API_URL}/servicos/${id}`, {
@@ -160,9 +140,6 @@ async function atualizarServico(id, dados) {
     }
 }
 
-// ----------------------------------------
-// SALVAR SERVIÇO (CADASTRAR OU ATUALIZAR)
-// ----------------------------------------
 async function salvarServico(evento) {
     evento.preventDefault();
     
@@ -189,9 +166,6 @@ async function salvarServico(evento) {
     }
 }
 
-// ----------------------------------------
-// EXCLUIR SERVIÇO
-// ----------------------------------------
 async function excluirServico(id) {
     if (!confirm('Tem certeza que deseja excluir este serviço?')) {
         return;
@@ -217,9 +191,6 @@ async function excluirServico(id) {
     }
 }
 
-// ----------------------------------------
-// INICIALIZAÇÃO
-// ----------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
     // Se estiver na página de lista
     if (document.getElementById('tabela-servicos')) {

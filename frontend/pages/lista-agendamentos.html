@@ -1,136 +1,132 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista de Agendamentos - Salão</title>
     <!-- Estilos base do sistema -->
-    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../css/estilo.css" />
     <!-- Estilos específicos da página -->
-    <link rel="stylesheet" href="../css/lista-agendamentos.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/lista-agendamentos.css" />
+  </head>
+  <body>
     <!-- Container Principal -->
     <div class="container-principal">
-        
-        <!-- ----------------------------------------
+      <!-- ----------------------------------------
              MENU LATERAL (ASIDE)
              ---------------------------------------- -->
-        <aside class="menu-lateral">
-            
-            <div class="logo">
-                <span class="icone-logo">S</span>
-                <span>Salao</span>
-            </div>
-            
-            <!-- Seção: Home -->
-            <nav class="secao-menu">
-                <a href="../index.html" class="item-menu">
-                    <span class="icone">></span>
-                    <span>Home</span>
-                </a>
-            </nav>
-            
-            <!-- Seção: Clientes -->
-            <div class="secao-menu">
-                <div class="titulo-secao">Clientes</div>
-                <a href="lista-clientes.html" class="item-menu">
-                    <span class="icone">></span>
-                    <span>Lista de Clientes</span>
-                </a>
-                <a href="cadastrar-cliente.html" class="item-menu">
-                    <span class="icone">+</span>
-                    <span>Cadastrar Cliente</span>
-                </a>
-            </div>
-            
-            <!-- Seção: Cabeleireiros -->
-            <div class="secao-menu">
-                <div class="titulo-secao">Cabeleireiros</div>
-                <a href="lista-cabeleireiros.html" class="item-menu">
-                    <span class="icone">></span>
-                    <span>Lista de Cabeleireiros</span>
-                </a>
-                <a href="cadastrar-cabeleireiro.html" class="item-menu">
-                    <span class="icone">+</span>
-                    <span>Cadastrar Cabeleireiro</span>
-                </a>
-            </div>
-            
-            <!-- Seção: Serviços -->
-            <div class="secao-menu">
-                <div class="titulo-secao">Servicos</div>
-                <a href="lista-servicos.html" class="item-menu">
-                    <span class="icone">></span>
-                    <span>Lista de Servicos</span>
-                </a>
-                <a href="cadastrar-servico.html" class="item-menu">
-                    <span class="icone">+</span>
-                    <span>Cadastrar Servico</span>
-                </a>
-            </div>
-            
-            <!-- Seção: Agendamentos -->
-            <div class="secao-menu">
-                <div class="titulo-secao">Agendamentos</div>
-                <a href="lista-agendamentos.html" class="item-menu ativo">
-                    <span class="icone">></span>
-                    <span>Lista de Agendamentos</span>
-                </a>
-                <a href="novo-agendamento.html" class="item-menu">
-                    <span class="icone">+</span>
-                    <span>Novo Agendamento</span>
-                </a>
-            </div>
-            
-        </aside>
-        
-        <!-- Conteúdo Principal -->
-        <main class="conteudo-principal">
-            
-            <header class="cabecalho-pagina">
-                <h1 class="titulo-pagina">Lista de Agendamentos</h1>
-                <p class="descricao-pagina">Visualize e gerencie todos os agendamentos do salao.</p>
-            </header>
-            
-            <!-- Conteudo da pagina -->
-            <section class="conteudo-pagina-interna">
-                
-                <!-- Botao adicionar -->
-                <div class="barra-acoes">
-                    <a href="novo-agendamento.html" class="botao-adicionar">+ Novo Agendamento</a>
-                </div>
-                
-                <!-- Tabela de agendamentos -->
-                <div class="tabela-container">
-                    <table class="tabela">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Cliente</th>
-                                <th>Cabeleireiro</th>
-                                <th>Serviço</th>
-                                <th>Data</th>
-                                <th>Hora</th>
-                                <th>Status</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tabela-agendamentos">
-                            <!-- Os dados serão carregados via JavaScript -->
-                        </tbody>
-                    </table>
-                </div>
-                
-            </section>
-            
-        </main>
-        
+      <aside class="menu-lateral">
+        <div class="logo">
+          <span class="icone-logo"></span>
+          <span>Salão dos Crias!🙅‍♂️</span>
+        </div>
+
+        <!-- Seção: Home -->
+        <nav class="secao-menu">
+          <a href="../index.html" class="item-menu">
+            <span class="icone">></span>
+            <span>Home</span>
+          </a>
+        </nav>
+
+        <!-- Seção: Clientes -->
+        <div class="secao-menu">
+          <div class="titulo-secao">Clientes</div>
+          <a href="lista-clientes.html" class="item-menu">
+            <span class="icone">></span>
+            <span>Lista de Clientes</span>
+          </a>
+          <a href="cadastrar-cliente.html" class="item-menu">
+            <span class="icone">+</span>
+            <span>Cadastrar Cliente</span>
+          </a>
+        </div>
+
+        <!-- Seção: Cabeleireiros -->
+        <div class="secao-menu">
+          <div class="titulo-secao">Cabeleireiros</div>
+          <a href="lista-cabeleireiros.html" class="item-menu">
+            <span class="icone">></span>
+            <span>Lista de Cabeleireiros</span>
+          </a>
+          <a href="cadastrar-cabeleireiro.html" class="item-menu">
+            <span class="icone">+</span>
+            <span>Cadastrar Cabeleireiro</span>
+          </a>
+        </div>
+
+        <!-- Seção: Serviços -->
+        <div class="secao-menu">
+          <div class="titulo-secao">Servicos</div>
+          <a href="lista-servicos.html" class="item-menu">
+            <span class="icone">></span>
+            <span>Lista de Servicos</span>
+          </a>
+          <a href="cadastrar-servico.html" class="item-menu">
+            <span class="icone">+</span>
+            <span>Cadastrar Servico</span>
+          </a>
+        </div>
+
+        <!-- Seção: Agendamentos -->
+        <div class="secao-menu">
+          <div class="titulo-secao">Agendamentos</div>
+          <a href="lista-agendamentos.html" class="item-menu ativo">
+            <span class="icone">></span>
+            <span>Lista de Agendamentos</span>
+          </a>
+          <a href="novo-agendamento.html" class="item-menu">
+            <span class="icone">+</span>
+            <span>Novo Agendamento</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Conteúdo Principal -->
+      <main class="conteudo-principal">
+        <header class="cabecalho-pagina">
+          <h1 class="titulo-pagina">Lista de Agendamentos</h1>
+          <p class="descricao-pagina">
+            Visualize e gerencie todos os agendamentos do salao.
+          </p>
+        </header>
+
+        <!-- Conteudo da pagina -->
+        <section class="conteudo-pagina-interna">
+          <!-- Botao adicionar -->
+          <div class="barra-acoes">
+            <a href="novo-agendamento.html" class="botao-adicionar"
+              >+ Novo Agendamento</a
+            >
+          </div>
+
+          <!-- Tabela de agendamentos -->
+          <div class="tabela-container">
+            <table class="tabela">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Cliente</th>
+                  <th>Cabeleireiro</th>
+                  <th>Serviço</th>
+                  <th>Data</th>
+                  <th>Hora</th>
+                  <th>Status</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="tabela-agendamentos">
+                <!-- Os dados serão carregados via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
     </div>
-    
+
     <!-- Scripts -->
     <script src="../js/api.js"></script>
     <script src="../js/agendamentos.js"></script>
     <script src="../js/navegacao.js"></script>
-</body>
+  </body>
 </html>

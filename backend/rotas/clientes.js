@@ -1,15 +1,7 @@
-// ========================================
-// ROTAS DE CLIENTES - CRUD COMPLETO
-// ========================================
-
 const express = require("express");
 const router = express.Router();
 const conexao = require("../configuracao/banco");
 
-// ----------------------------------------
-// LISTAR TODOS OS CLIENTES (GET)
-// Rota: GET /clientes
-// ----------------------------------------
 router.get("/", (req, res) => {
   const sql = "SELECT * FROM clientes";
 
@@ -22,10 +14,6 @@ router.get("/", (req, res) => {
   });
 });
 
-// ----------------------------------------
-// BUSCAR UM CLIENTE POR ID (GET)
-// Rota: GET /clientes/:id
-// ----------------------------------------
 router.get("/:id", (req, res) => {
   const { id } = req.params;
   const sql = "SELECT * FROM clientes WHERE id = ?";
@@ -44,10 +32,6 @@ router.get("/:id", (req, res) => {
   });
 });
 
-// ----------------------------------------
-// CADASTRAR NOVO CLIENTE (POST)
-// Rota: POST /clientes
-// ----------------------------------------
 router.post("/", (req, res) => {
   const { nome, telefone, endereco } = req.body;
 
@@ -72,10 +56,6 @@ router.post("/", (req, res) => {
   });
 });
 
-// ----------------------------------------
-// ATUALIZAR CLIENTE (PUT)
-// Rota: PUT /clientes/:id
-// ----------------------------------------
 router.put("/:id", (req, res) => {
   const { id } = req.params;
   const { nome, telefone, endereco } = req.body;
@@ -102,10 +82,6 @@ router.put("/:id", (req, res) => {
   });
 });
 
-// ----------------------------------------
-// EXCLUIR CLIENTE (DELETE)
-// Rota: DELETE /clientes/:id
-// ----------------------------------------
 router.delete("/:id", (req, res) => {
   const { id } = req.params;
   const sql = "DELETE FROM clientes WHERE id = ?";

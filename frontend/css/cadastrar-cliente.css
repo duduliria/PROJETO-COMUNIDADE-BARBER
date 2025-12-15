@@ -1,154 +1,163 @@
 .pagina-cadastro {
-    min-height: 100vh;
-    background-color: #f8f8f8;
-    padding: 30px 40px;
+  min-height: 100vh;
+  background-image: url("../../imagem1.jpg");
+  background-color: rgba(0, 0, 0, 0.7);
+  background-size: 400px;
+  background-blend-mode: darken;
+  padding: 30px 40px;
 }
 
-
 .cabecalho-cadastro {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    margin-bottom: 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 30px;
 }
 
 .botao-voltar {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    color: #333;
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
 .botao-voltar:hover {
-    color: #7c3aed;
+  color: #7c3aed;
 }
 
 .info-cadastro h1 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #1a1a2e;
-    margin-bottom: 4px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 4px;
 }
 
 .info-cadastro p {
-    font-size: 14px;
-    color: #666;
+  font-size: 14px;
+  color: #ffffff;
 }
-
 
 .card-formulario {
-    background-color: #ffffff;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-    border: 1px solid #eee;
-    max-width: 600px;
+  background-color: #c4bebe;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  border: 2.9px solid white;
+  max-width: 600px;
 }
 
-
 .titulo-formulario {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
 }
 
 .titulo-formulario .icone-titulo {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .titulo-formulario h2 {
-    font-size: 16px;
-    font-weight: bold;
-    color: #1a1a2e;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
 }
 
 .subtitulo-formulario {
-    font-size: 13px;
-    color: #888;
-    margin-bottom: 25px;
+  font-size: 13px;
+  color: #ffffff;
+  margin-bottom: 25px;
 }
 
 .grupo-campo {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .grupo-campo label {
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 8px;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
 }
 
 .grupo-campo input,
 .grupo-campo select,
 .grupo-campo textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 14px;
-    color: #333;
-    background-color: #fff;
-    transition: border-color 0.2s ease;
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  transition: border-color 0.2s ease;
+}
+
+#nome,
+#telefone,
+#endereco {
+  border: 2.5px solid rgb(0, 0, 0);
+  color: #333;
+  box-shadow: 0 0 50px white;
 }
 
 .grupo-campo input:focus,
 .grupo-campo select:focus,
 .grupo-campo textarea:focus {
-    outline: none;
-    border-color: #7c3aed;
+  outline: none;
+  border-color: #7c3aed;
 }
 
 .grupo-campo input::placeholder,
 .grupo-campo textarea::placeholder {
-    color: #aaa;
+  color: #aaa;
 }
 
-
 .botoes-formulario {
-    display: flex;
-    gap: 12px;
-    margin-top: 25px;
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
 }
 
 .botao-salvar {
-    padding: 12px 24px;
-    background-color: #7c3aed;
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+  padding: 12px 24px;
+  background-color: #968d8d;
+  color: #ffffff;
+  border: 2.5px solid white;
+  box-shadow: 0 0 100px white;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .botao-salvar:hover {
-    background-color: #6d28d9;
+  background-color: #6d28d9;
 }
 
 .botao-cancelar {
-    padding: 12px 24px;
-    background-color: #f3f4f6;
-    color: #333;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    text-decoration: none;
-    display: inline-block;
+  padding: 12px 24px;
+  background-color: #ff9a9a;
+  color: #ffffff;
+  border: 2.9px solid #ffffff;
+  box-shadow: 0 0 100px white;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .botao-cancelar:hover {
-    background-color: #e5e7eb;
+  background-color: #e5e7eb;
 }

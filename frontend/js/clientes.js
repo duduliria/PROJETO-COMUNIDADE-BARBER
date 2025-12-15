@@ -1,11 +1,3 @@
-// ========================================
-// CLIENTES - FUNÇÕES DO FRONTEND
-// Arquivo com todas as funções para gerenciar clientes
-// ========================================
-
-// ----------------------------------------
-// CARREGAR LISTA DE CLIENTES
-// ----------------------------------------
 async function carregarClientes() {
     try {
         const resposta = await fetch(`${API_URL}/clientes`);
@@ -48,9 +40,6 @@ async function carregarClientes() {
     }
 }
 
-// ----------------------------------------
-// CADASTRAR NOVO CLIENTE
-// ----------------------------------------
 async function cadastrarCliente(evento) {
     evento.preventDefault();
     
@@ -82,16 +71,10 @@ async function cadastrarCliente(evento) {
     }
 }
 
-// ----------------------------------------
-// EDITAR CLIENTE - Redireciona para página de edição
-// ----------------------------------------
 function editarCliente(id) {
     window.location.href = `cadastrar-cliente.html?id=${id}`;
 }
 
-// ----------------------------------------
-// CARREGAR DADOS DO CLIENTE PARA EDIÇÃO
-// ----------------------------------------
 async function carregarClienteParaEdicao() {
     // Pega o ID da URL
     const parametros = new URLSearchParams(window.location.search);
@@ -127,9 +110,6 @@ async function carregarClienteParaEdicao() {
     }
 }
 
-// ----------------------------------------
-// ATUALIZAR CLIENTE
-// ----------------------------------------
 async function atualizarCliente(id, dados) {
     try {
         const resposta = await fetch(`${API_URL}/clientes/${id}`, {
@@ -155,9 +135,6 @@ async function atualizarCliente(id, dados) {
     }
 }
 
-// ----------------------------------------
-// SALVAR CLIENTE (CADASTRAR OU ATUALIZAR)
-// ----------------------------------------
 async function salvarCliente(evento) {
     evento.preventDefault();
     
@@ -179,9 +156,6 @@ async function salvarCliente(evento) {
     }
 }
 
-// ----------------------------------------
-// EXCLUIR CLIENTE
-// ----------------------------------------
 async function excluirCliente(id) {
     if (!confirm('Tem certeza que deseja excluir este cliente?')) {
         return;
@@ -207,9 +181,6 @@ async function excluirCliente(id) {
     }
 }
 
-// ----------------------------------------
-// INICIALIZAÇÃO
-// ----------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
     // Se estiver na página de lista
     if (document.getElementById('tabela-clientes')) {
